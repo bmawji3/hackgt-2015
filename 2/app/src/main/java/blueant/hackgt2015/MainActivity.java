@@ -21,30 +21,22 @@ public class MainActivity extends ActionBarActivity {
         yami = (Button) findViewById(R.id.buttonYami);
         yugi = (Button) findViewById(R.id.buttonYugi);
         kaiba = (Button) findViewById(R.id.buttonKaiba);
-        addYugi();
-        addYami();
-        addKaiba();
+        addResources();
     }
 
-    public void addYami() {
+    public void addResources() {
         yami.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 picture.setImageResource(R.drawable.yami);
             }
         });
-    }
-
-    public void addYugi() {
         yugi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 picture.setImageResource(R.drawable.yugi);
             }
         });
-    }
-
-    public void addKaiba() {
         kaiba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
