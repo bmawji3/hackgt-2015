@@ -1,8 +1,10 @@
 package blueant.hackgt2015;
 
+import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,9 +20,8 @@ public class MainActivity extends ActionBarActivity {
     Button yami;
     Button yugi;
     Button kaiba;
-    int REQUEST_ENABLE_BT;
+//    int REQUEST_ENABLE_BT;
     ArrayList<String> adapters;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
         addYugi();
         addYami();
         addKaiba();
-        bluetoothConnection();
+//        bluetoothConnection();
     }
 
     public void addYami() {
@@ -63,21 +64,22 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-    public void bluetoothConnection() {
-        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (bluetoothAdapter == null) {
-            System.out.println("null bluetooth - bilal");
-        }
-        if (!bluetoothAdapter.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-        }
-        Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
-        if (pairedDevices.size() > 0) {
-            for (BluetoothDevice device : pairedDevices) {
-                adapters.add(device.getName() + "\n" + device.getAddress());
-            }
-        }
+
+//    public void bluetoothConnection() {
+//        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+//        if (bluetoothAdapter == null) {
+//            System.out.println("null bluetooth - bilal");
+//        }
+//        if (!bluetoothAdapter.isEnabled()) {
+//            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+//        }
+//        Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+//        if (pairedDevices.size() > 0) {
+//            for (BluetoothDevice device : pairedDevices) {
+//                adapters.add(device.getName() + "\n" + device.getAddress());
+//            }
+//        }
 //        System.out.println(adapters);
-    }
+//    }
 }
