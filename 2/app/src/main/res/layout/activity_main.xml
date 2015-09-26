@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/kaiba"
+        android:layout_weight="0.55"
+        android:layout_below="@+id/buttonKaiba"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kaiba"
+        android:id="@+id/buttonKaiba"
+        android:layout_weight="0.12"
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/buttonYami"
+        android:layout_toEndOf="@+id/buttonYami" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yugi"
+        android:id="@+id/buttonYugi"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yami"
+        android:id="@+id/buttonYami"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/buttonYugi"
+        android:layout_toEndOf="@+id/buttonYugi"
+        android:clickable="true" />
 
 </RelativeLayout>
