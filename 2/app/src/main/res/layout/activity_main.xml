@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/kaiba"
+        android:id="@+id/character"
         android:layout_weight="0.55"
         android:layout_below="@+id/buttonKaiba"
         android:layout_alignParentLeft="true"

@@ -17,15 +17,39 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        picture = (ImageView) findViewById(R.id.kaiba);
-//        iv.setOnClickListener(this);
+        picture = (ImageView) findViewById(R.id.character);
+        yami = (Button) findViewById(R.id.buttonYami);
+        yugi = (Button) findViewById(R.id.buttonYugi);
+        kaiba = (Button) findViewById(R.id.buttonKaiba);
+        addYugi();
+        addYami();
+        addKaiba();
     }
 
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.
-//        }
-//    }
+    public void addYami() {
+        yami.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                picture.setImageResource(R.drawable.yami);
+            }
+        });
+    }
 
+    public void addYugi() {
+        yugi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                picture.setImageResource(R.drawable.yugi);
+            }
+        });
+    }
 
+    public void addKaiba() {
+        kaiba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                picture.setImageResource(R.drawable.kaiba);
+            }
+        });
+    }
 }
