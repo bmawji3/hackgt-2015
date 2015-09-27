@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="blueant.hackgt2015.Main2Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Servo 1"
+        android:id="@+id/servo1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Servo 2"
+        android:id="@+id/servo2"
+        android:layout_marginTop="61dp"
+        android:layout_below="@+id/servo1plus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Servo 3"
+        android:id="@+id/servo3"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/servo2plus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:id="@+id/servo1plus"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/servo1"
+        android:layout_toRightOf="@+id/servo1"
+        android:layout_toEndOf="@+id/servo1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-1"
+        android:id="@+id/servo1minus"
+        android:layout_alignBottom="@+id/servo1plus"
+        android:layout_toRightOf="@+id/servo1plus"
+        android:layout_toEndOf="@+id/servo1plus" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:id="@+id/servo2plus"
+        android:layout_below="@+id/servo2"
+        android:layout_toLeftOf="@+id/servo1minus"
+        android:layout_toStartOf="@+id/servo1minus"
+        android:layout_marginTop="33dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-1"
+        android:id="@+id/servo2minus"
+        android:layout_alignTop="@+id/servo2plus"
+        android:layout_toRightOf="@+id/servo2plus"
+        android:layout_toEndOf="@+id/servo2plus" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:id="@+id/servo3plus"
+        android:layout_below="@+id/servo3"
+        android:layout_toRightOf="@+id/servo3"
+        android:layout_toEndOf="@+id/servo3"
+        android:layout_marginTop="38dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-1"
+        android:id="@+id/servo3minus"
+        android:layout_alignTop="@+id/servo3plus"
+        android:layout_toRightOf="@+id/servo3plus"
+        android:layout_toEndOf="@+id/servo3plus" />
+</RelativeLayout>
