@@ -25,7 +25,8 @@
         android:clickable="true"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/buttonYami"
-        android:layout_toEndOf="@+id/buttonYami" />
+        android:layout_toEndOf="@+id/buttonYami"
+        android:background="@color/blue"/>
 
     <Button
         android:layout_width="wrap_content"

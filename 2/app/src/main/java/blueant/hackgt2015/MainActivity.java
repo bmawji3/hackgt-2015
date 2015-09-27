@@ -39,14 +39,6 @@ public class MainActivity extends ActionBarActivity {
         addYami();
         addKaiba();
 //        bluetoothConnection();
-//        try {
-//            actionBar = getActionBar();
-//            actionBar.show();
-//        } catch (NullPointerException e) {
-//            System.out.println("Null pointer - Bilal");
-//            System.out.println(e.getMessage());
-//        }
-
     }
 
     @Override
@@ -61,7 +53,7 @@ public class MainActivity extends ActionBarActivity {
         yami.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                picture.setImageResource(R.drawable.yami);
+                picture.setImageResource(R.drawable.yami_tb);
             }
         });
     }
@@ -79,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
         kaiba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                picture.setImageResource(R.drawable.kaiba);
+                picture.setImageResource(R.drawable.kaiba_tb);
             }
         });
     }
@@ -99,8 +91,6 @@ public class MainActivity extends ActionBarActivity {
                 return true;
         }
     }
-
-
 
 //    public void bluetoothConnection() {
 //        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
