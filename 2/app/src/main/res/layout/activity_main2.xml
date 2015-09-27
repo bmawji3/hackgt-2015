@@ -25,11 +25,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Servo 2"
         android:id="@+id/servo2"
-        android:layout_marginTop="61dp"
+        android:textColor="@color/Blue"
         android:layout_below="@+id/servo1plus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/Blue" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,23 +35,19 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Servo 3"
         android:id="@+id/servo3"
-        android:layout_marginTop="57dp"
+        android:textColor="@color/Blue"
         android:layout_below="@+id/servo2plus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/Blue" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+1"
         android:id="@+id/servo1plus"
-        android:layout_marginTop="36dp"
-        android:layout_below="@+id/servo1"
-        android:layout_toRightOf="@+id/servo1"
-        android:layout_toEndOf="@+id/servo1"
         android:background="@color/Green"
-        android:textColor="@color/BlanchedAlmond" />
+        android:textColor="@color/BlanchedAlmond"
+        android:layout_below="@+id/servo1"
+        android:layout_toEndOf="@+id/servo1" />
 
     <Button
         android:layout_width="wrap_content"
@@ -71,12 +65,10 @@
         android:layout_height="wrap_content"
         android:text="+1"
         android:id="@+id/servo2plus"
-        android:layout_below="@+id/servo2"
-        android:layout_toLeftOf="@+id/servo1minus"
-        android:layout_toStartOf="@+id/servo1minus"
-        android:layout_marginTop="33dp"
         android:background="@color/Green"
-        android:textColor="@color/BlanchedAlmond" />
+        android:textColor="@color/BlanchedAlmond"
+        android:layout_below="@+id/servo2"
+        android:layout_toEndOf="@+id/servo2" />
 
     <Button
         android:layout_width="wrap_content"
@@ -94,12 +86,10 @@
         android:layout_height="wrap_content"
         android:text="+1"
         android:id="@+id/servo3plus"
-        android:layout_below="@+id/servo3"
-        android:layout_toRightOf="@+id/servo3"
-        android:layout_toEndOf="@+id/servo3"
-        android:layout_marginTop="38dp"
         android:background="@color/Green"
-        android:textColor="@color/BlanchedAlmond" />
+        android:textColor="@color/BlanchedAlmond"
+        android:layout_below="@+id/servo3"
+        android:layout_toStartOf="@+id/servo2minus" />
 
     <Button
         android:layout_width="wrap_content"
@@ -111,5 +101,40 @@
         android:layout_toEndOf="@+id/servo3plus"
         android:background="@color/Red"
         android:textColor="@color/BlanchedAlmond" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:id="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/servo3plus"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:maxLines="30"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/servo1Text"
+        android:layout_alignBottom="@+id/servo1minus"
+        android:layout_alignTop="@+id/servo1minus"
+        android:layout_alignEnd="@+id/textView" />
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/servo2Text"
+        android:layout_alignTop="@+id/servo2minus"
+        android:layout_alignStart="@+id/servo1Text"
+        android:layout_alignBottom="@+id/servo2minus" />
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/servo3Text"
+        android:layout_above="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignTop="@+id/servo3minus" />
 
 </RelativeLayout>
