@@ -33,13 +33,13 @@ import java.util.UUID;
 public class Main2Activity extends ActionBarActivity {
 
     //these values are specific to the Grove BLE V1 - update if you're using a different module
-    private static String GROVE_SERVICE = "0000ffe0-0000-1000-8000-00805f9b34fb";
+    private static String EDISON_SERVICE = "0000ffe0-0000-1000-8000-00805f9b34fb";
     private static String CHARACTERISTIC_TX = "0000ffe1-0000-1000-8000-00805f9b34fb";
     private static String CHARACTERISTIC_RX = "0000ffe1-0000-1000-8000-00805f9b34fb";
 
     private static final int REQUEST_ENABLE_BT = 1;
-    private static final long SCAN_PERIOD = 10000; //10 seconds
-    private static final String DEVICE_NAME = "HMSoft"; //display name for Grove BLE
+    private static final long SCAN_PERIOD = 5000; //5 seconds
+    private static final String DEVICE_NAME = "EdisonHackGT"; //display name for Edison BLE
 
     private BluetoothAdapter mBluetoothAdapter;//our local adapter
     private BluetoothGatt mBluetoothGatt; //provides the GATT functionality for communication
@@ -130,7 +130,7 @@ public class Main2Activity extends ActionBarActivity {
             mTimer.cancel();
         }
 
-        scanLeDevice();
+//        scanLeDevice();
         mTimer = new Timer();
         mTimer.schedule(new TimerTask() {
             @Override
@@ -144,14 +144,15 @@ public class Main2Activity extends ActionBarActivity {
     private void findGroveBLE () {
         if(mDevices == null || mDevices.size() == 0) {
             statusUpdate("No BLE devices found");
+            statusUpdate("BLE Devices found: " + mDevices.size());
             return;
         }
         else if(mDevice == null) {
-            statusUpdate("Unable to find Grove BLE");
+            statusUpdate("Unable to find Edison BLE");
             return;
         }
         else {
-            statusUpdate("Found Grove BLE V1");
+            statusUpdate("Found Edison BLE");
             statusUpdate("Address: " + mDevice.getAddress());
             connectDevice();
         }
@@ -188,8 +189,7 @@ public class Main2Activity extends ActionBarActivity {
 
                 for(BluetoothGattService gattService : gattServices) {
                     statusUpdate("Service discovered: " + gattService.getUuid());
-                    if(GROVE_SERVICE.equals(gattService.getUuid().toString()))
-                    {
+                    if(EDISON_SERVICE.equals(gattService.getUuid().toString())) {
                         mBluetoothGattService = gattService;
                         statusUpdate("Found communication Service");
                         sendMessage();
@@ -217,9 +217,9 @@ public class Main2Activity extends ActionBarActivity {
 
         statusUpdate("Found TX characteristic: " + CHARACTERISTIC_TX);
 
-        statusUpdate("Sending message 'Hello Grove BLE'");
+        statusUpdate("Sending message 'Hello Edison BLE'");
 
-        String msg = "Hello Grove BLE";
+        String msg = "Hello Edison BLE";
 
         byte b = 0x00;
         byte[] temp = msg.getBytes();
@@ -233,42 +233,42 @@ public class Main2Activity extends ActionBarActivity {
         mBluetoothGatt.writeCharacteristic(gattCharacteristic);
     }
 
-    private void scanLeDevice() {
-        new Thread() {
+//    private void scanLeDevice() {
+//        new Thread() {
+//
+//            @Override
+//            public void run() {
+//                mBluetoothAdapter.startLeScan(mLeScanCallback);
+//
+//                try {
+//                    Thread.sleep(SCAN_PERIOD);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                mBluetoothAdapter.stopLeScan(mLeScanCallback);
+//            }
+//        }.start();
+//    }
 
-            @Override
-            public void run() {
-                mBluetoothAdapter.startLeScan(mLeScanCallback);
-
-                try {
-                    Thread.sleep(SCAN_PERIOD);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                mBluetoothAdapter.stopLeScan(mLeScanCallback);
-            }
-        }.start();
-    }
-
-    private BluetoothAdapter.LeScanCallback mLeScanCallback
-            = new BluetoothAdapter.LeScanCallback() {
-
-        @Override
-        public void onLeScan(final BluetoothDevice device, final int rssi,
-                             byte[] scanRecord) {
-            if (device != null) {
-                //to avoid duplicate entries
-                if (mDevices.indexOf(device) == -1) {
-                    if (DEVICE_NAME.equals(device.getName())) {
-                        mDevice = device;//we found our device!
-                    }
-                    mDevices.add(device);
-                    statusUpdate("Found device " + device.getName());
-                }
-            }
-        }
-    };
+//    private BluetoothAdapter.LeScanCallback mLeScanCallback
+//            = new BluetoothAdapter.LeScanCallback() {
+//
+//        @Override
+//        public void onLeScan(final BluetoothDevice device, final int rssi,
+//                             byte[] scanRecord) {
+//            if (device != null) {
+//                //to avoid duplicate entries
+//                if (mDevices.indexOf(device) == -1) {
+//                    if (DEVICE_NAME.equals(device.getName())) {
+//                        mDevice = device;//we found our device!
+//                    }
+//                    mDevices.add(device);
+//                    statusUpdate("Found device " + device.getName());
+//                }
+//            }
+//        }
+//    };
 
     //output helper method
     private void statusUpdate (final String msg) {
