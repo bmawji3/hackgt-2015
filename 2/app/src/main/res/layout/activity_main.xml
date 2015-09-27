@@ -5,7 +5,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@color/BlanchedAlmond">
 
     <ImageView
         android:layout_width="match_parent"
@@ -26,7 +27,8 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/buttonYami"
         android:layout_toEndOf="@+id/buttonYami"
-        android:background="@color/blue"/>
+        android:background="@color/BlueEyes"
+        android:textColor="@color/White"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -36,7 +38,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:clickable="true" />
+        android:clickable="true"
+        android:background="@color/DarkMagician"
+        android:textColor="@color/White"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -46,6 +50,8 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/buttonYugi"
         android:layout_toEndOf="@+id/buttonYugi"
-        android:clickable="true" />
+        android:clickable="true"
+        android:background="@color/Exodia"
+        android:textColor="@color/White"/>
 
 </RelativeLayout>
