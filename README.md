@@ -3,7 +3,7 @@ HackGT project 2015
 
 Engineered app that allows one to press button and generate image of that character
 
-Tinkered with logos and changed logo from basic Android to YuGiOh logo
+Tinkered with icons and changed icon from basic Android to YuGiOh! logo
 
 Designed menu item to start new intent and move to new activity
 
